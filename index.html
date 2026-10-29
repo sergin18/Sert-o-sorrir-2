@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sertão Sorrir Odontologia | Ortodontia, Implantes e Harmonização Facial em Sertânia-PE</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#b89768',
+                        primaryDark: '#9a7a4f',
+                        secondary: '#3d322b',
+                        cream: '#fcfbfa',
+                        sand: '#f5f0eb',
+                        softGold: '#dfcbb0'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfbfa;
+            color: #3d322b;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-cream text-secondary antialiased selection:bg-primary selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-secondary text-cream py-2 px-4 text-center text-xs md:text-sm font-medium tracking-wide">
+        <span class="inline-block mr-2">📍 Rua Dr. Manoel Borba, Sertânia-PE</span> | 
+        <span class="inline-block ml-2"><i class="fa-brands fa-whatsapp text-green-400 mr-1"></i> Agende sua avaliação</span>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-cream/95 backdrop-blur-md border-b border-sand shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-11 h-11 rounded-full bg-secondary flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-cream transition-colors shadow-md">
+                    <!-- Minimalist Cactus + Tooth SVG -->
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M12 2C8 2 5 5 5 9c0 3 2 5 2 7v3h10v-3s2-4 2-7c0-4-3-7-7-7z" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 6v10M9 9h6M10 13h4" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="font-serif text-xl md:text-2xl font-bold tracking-tight text-secondary">SERTÃO SORRIR</span>
+                    <span class="block text-[10px] tracking-widest text-primary font-semibold uppercase">Odontologia</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#inicio" class="hover:text-primary transition-colors">Início</a>
+                <a href="#servicos" class="hover:text-primary transition-colors">Serviços</a>
+                <a href="#sobre" class="hover:text-primary transition-colors">A Clínica</a>
+                <a href="#localizacao" class="hover:text-primary transition-colors">Localização</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden sm:flex items-center">
+                <button onclick="openModal()" class="bg-primary hover:bg-primaryDark text-white font-medium px-5 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-200 flex items-center gap-2 text-sm">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Agendar Agora</span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="flex md:hidden">
+                <button id="mobile-menu-btn" class="text-secondary focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cream border-b border-sand px-6 pt-2 pb-6 space-y-3 shadow-lg">
+            <a href="#inicio" class="block py-2 hover:text-primary font-medium border-b border-sand/50">Início</a>
+            <a href="#servicos" class="block py-2 hover:text-primary font-medium border-b border-sand/50">Serviços</a>
+            <a href="#sobre" class="block py-2 hover:text-primary font-medium border-b border-sand/50">A Clínica</a>
+            <a href="#localizacao" class="block py-2 hover:text-primary font-medium border-b border-sand/50">Localização</a>
+            <div class="pt-2">
+                <button onclick="openModal()" class="w-full bg-primary hover:bg-primaryDark text-white font-medium py-3 rounded-full shadow transition-all flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Agendar Agora</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden bg-gradient-to-b from-sand/60 to-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Text Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-softGold/30 border border-softGold text-secondary px-3.5 py-1.5 rounded-full text-xs font-medium tracking-wide">
+                        <i class="fa-solid fa-sparkles text-primary"></i>
+                        <span>Especialistas em transformar sorrisos no Sertão</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-secondary leading-tight">
+                        Ortodontia, dentes perfeitos e <span class="text-primary italic font-serif">autoestima renovada</span>.
+                    </h1>
+
+                    <p class="text-lg md:text-xl text-secondary/80 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Cuidamos do seu sorriso com tecnologia avançada, atendimento humanizado e técnicas modernas de implantes, próteses e harmonização facial em Sertânia.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <button onclick="openModal()" class="w-full sm:w-auto bg-primary hover:bg-primaryDark text-white font-medium px-8 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-3 text-base group">
+                            <i class="fa-brands fa-whatsapp text-2xl group-hover:scale-110 transition-transform"></i>
+                            <span>Agendar Consulta no WhatsApp</span>
+                        </button>
+                        <a href="#servicos" class="w-full sm:w-auto border border-secondary/30 hover:border-primary text-secondary hover:text-primary font-medium px-6 py-4 rounded-full transition-all text-center">
+                            Conhecer Serviços
+                        </a>
+                    </div>
+
+                    <!-- Trust indicators -->
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-sand max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <p class="text-2xl font-serif font-bold text-secondary">100%</p>
+                            <p class="text-xs text-secondary/70">Humanizado</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-serif font-bold text-secondary">+1500</p>
+                            <p class="text-xs text-secondary/70">Sorrisos Renovados</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-serif font-bold text-secondary">Sertânia</p>
+                            <p class="text-xs text-secondary/70">Localização Central</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Element / Logo Card -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <!-- Decorative background glow -->
+                        <div class="absolute -inset-2 bg-gradient-to-r from-primary/30 to-softGold/40 rounded-3xl blur-xl opacity-70"></div>
+                        
+                        <!-- Main Card -->
+                        <div class="relative bg-secondary text-cream p-8 md:p-10 rounded-3xl shadow-2xl border border-primary/20 text-center space-y-6">
+                            <div class="w-20 h-20 mx-auto bg-primary/20 rounded-full flex items-center justify-center border border-primary/40">
+                                <svg class="w-10 h-10 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <path d="M12 2C8 2 5 5 5 9c0 3 2 5 2 7v3h10v-3s2-4 2-7c0-4-3-7-7-7z" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 6v10M9 9h6M10 13h4" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            
+                            <div>
+                                <h3 class="font-serif text-2xl font-bold tracking-wide text-cream">SERTÃO SORRIR</h3>
+                                <p class="text-xs tracking-widest text-primary uppercase mt-1">Odontologia Especializada</p>
+                            </div>
+
+                            <div class="bg-secondary/70 p-4 rounded-2xl border border-white/10 text-sm text-cream/90 space-y-2">
+                                <p class="font-medium text-primary"><i class="fa-solid fa-location-dot mr-1.5"></i> Endereço:</p>
+                                <p class="text-xs leading-relaxed">Rua Dr. Manoel Borba, Sertânia - PE</p>
+                            </div>
+
+                            <button onclick="openModal()" class="w-full bg-primary hover:bg-primaryDark text-white py-3.5 rounded-xl font-medium transition-all shadow-md flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-calendar-check"></i>
+                                <span>Fale Conosco Agora</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-20 md:py-28 bg-cream relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-xs uppercase tracking-widest text-primary font-semibold bg-sand px-3.5 py-1 rounded-full">Nossos Tratamentos</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary">Excelência e Tecnologia em Cada Procedimento</h2>
+                <p class="text-secondary/70 text-base md:text-lg">Oferecemos tratamentos odontológicos completos para devolver a sua saúde bucal, funcionalidade e o orgulho de sorrir.</p>
+            </div>
+
+            <!-- Grid of 4 Services -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Service 1: Implantes -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-sand flex flex-col justify-between group hover:-translate-y-1">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-sand text-primary flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-tooth"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary mb-3">Implantes Dentários</h3>
+                        <p class="text-secondary/70 text-sm leading-relaxed">
+                            Recupere a firmeza da sua mordida e a estética natural com implantes de alta qualidade e durabilidade garantida.
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-sand flex items-center justify-between">
+                        <span class="text-xs font-medium text-primary">Avaliação especializada</span>
+                        <button onclick="openServiceModal('Implantes Dentários')" class="text-secondary hover:text-primary text-sm font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                            <span>Agendar</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 2: Próteses -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-sand flex flex-col justify-between group hover:-translate-y-1">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-sand text-primary flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-face-smile"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary mb-3">Próteses Dentárias</h3>
+                        <p class="text-secondary/70 text-sm leading-relaxed">
+                            Próteses fixas ou removíveis projetadas sob medida para devolver o conforto, a mastigação e um sorriso harmonioso.
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-sand flex items-center justify-between">
+                        <span class="text-xs font-medium text-primary">Sob medida</span>
+                        <button onclick="openServiceModal('Próteses Dentárias')" class="text-secondary hover:text-primary text-sm font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                            <span>Agendar</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 3: Harmonização Facial -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-sand flex flex-col justify-between group hover:-translate-y-1">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-sand text-primary flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary mb-3">Harmonização Facial</h3>
+                        <p class="text-secondary/70 text-sm leading-relaxed">
+                            Procedimentos estéticos faciais seguros (toxina botulínica, preenchimento) que valorizam seus traços e rejuvenescem com naturalidade.
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-sand flex items-center justify-between">
+                        <span class="text-xs font-medium text-primary">Estética avançada</span>
+                        <button onclick="openServiceModal('Harmonização Facial')" class="text-secondary hover:text-primary text-sm font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                            <span>Agendar</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 4: Ortodontia -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-sand flex flex-col justify-between group hover:-translate-y-1">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-sand text-primary flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-teeth"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary mb-3">Ortodontia</h3>
+                        <p class="text-secondary/70 text-sm leading-relaxed">
+                            Alinhamento perfeito dos dentes com aparelhos modernos, garantindo correção da mordida e um sorriso impecável.
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-sand flex items-center justify-between">
+                        <span class="text-xs font-medium text-primary">Alinhamento perfeito</span>
+                        <button onclick="openServiceModal('Ortodontia')" class="text-secondary hover:text-primary text-sm font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                            <span>Agendar</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us / Differential Section -->
+    <section id="sobre" class="py-20 md:py-28 bg-sand/50 border-y border-sand">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column: Image / Feature Highlights -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="relative">
+                        <div class="bg-secondary text-cream rounded-3xl p-8 md:p-12 shadow-xl space-y-6">
+                            <span class="text-xs uppercase tracking-widest text-primary font-semibold">Nossa Missão</span>
+                            <h3 class="text-2xl md:text-3xl font-bold font-serif">Cuidando de você com excelência e acolhimento no Sertão</h3>
+                            <p class="text-cream/80 text-sm leading-relaxed">
+                                Acreditamos que um sorriso bonito transforma vidas, eleva a autoestima e abre portas. Na Sertão Sorrir Odontologia, cada paciente é único e recebe um plano de tratamento personalizado.
+                            </p>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                                <div class="bg-secondary/80 p-4 rounded-xl border border-white/10">
+                                    <i class="fa-solid fa-shield-heart text-primary text-xl mb-2"></i>
+                                    <h4 class="font-bold text-base text-cream">Atendimento Humanizado</h4>
+                                    <p class="text-xs text-cream/70 mt-1">Conforto e segurança em cada etapa do seu tratamento.</p>
+                                </div>
+                                <div class="bg-secondary/80 p-4 rounded-xl border border-white/10">
+                                    <i class="fa-solid fa-gem text-primary text-xl mb-2"></i>
+                                    <h4 class="font-bold text-base text-cream">Materiais Premium</h4>
+                                    <p class="text-xs text-cream/70 mt-1">Tecnologia de ponta e durabilidade comprovada.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Details -->
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-xs uppercase tracking-widest text-primary font-semibold bg-white px-3.5 py-1 rounded-full border border-sand">Por que nos escolher?</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-secondary">Autoestima renovada começa com um sorriso confiante</h2>
+                    
+                    <p class="text-secondary/80 text-base leading-relaxed">
+                        Nossa clínica foi estruturada para proporcionar uma experiência agradável e livre de medos. Combinamos profissionais altamente qualificados com um ambiente acolhedor no coração de Sertânia.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4 bg-white p-4 rounded-2xl shadow-sm border border-sand">
+                            <div class="w-10 h-10 rounded-full bg-sand text-primary flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-secondary">Localização de Fácil Acesso</h4>
+                                <p class="text-xs text-secondary/70 mt-0.5">Situados na Rua Dr. Manoel Borba, com total comodidade para você.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 bg-white p-4 rounded-2xl shadow-sm border border-sand">
+                            <div class="w-10 h-10 rounded-full bg-sand text-primary flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-secondary">Planos de Tratamento Flexíveis</h4>
+                                <p class="text-xs text-secondary/70 mt-0.5">Condições que cabem no seu bolso para você não adiar o seu sonho.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <button onclick="openModal()" class="bg-secondary hover:bg-secondary/95 text-cream font-medium px-8 py-3.5 rounded-full shadow transition-all flex items-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-green-400 text-xl"></i>
+                            <span>Falar com um Atendente</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="localizacao" class="py-20 md:py-28 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-xs uppercase tracking-widest text-primary font-semibold bg-sand px-3.5 py-1 rounded-full">Onde Estamos</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary">Visite a Sertão Sorrir em Sertânia</h2>
+                <p class="text-secondary/70 text-base">Venha tomar um café conosco e fazer sua avaliação em um ambiente moderno e aconchegante.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                
+                <!-- Contact Info Card -->
+                <div class="lg:col-span-5 bg-secondary text-cream p-8 md:p-10 rounded-3xl shadow-xl flex flex-col justify-between space-y-8">
+                    <div class="space-y-6">
+                        <h3 class="font-serif text-2xl font-bold">Informações de Contato</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-primary/20 text-primary flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-sm text-primary">Endereço</h4>
+                                    <p class="text-sm text-cream/90 mt-0.5">Rua Dr. Manoel Borba, Sertânia - PE</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-primary/20 text-primary flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-sm text-primary">Telefone / WhatsApp</h4>
+                                    <p class="text-sm text-cream/90 mt-0.5">(87) 99999-9999</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-primary/20 text-primary flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-sm text-primary">Horário de Atendimento</h4>
+                                    <p class="text-sm text-cream/90 mt-0.5">Segunda a Sexta: 08:00 - 18:00</p>
+                                    <p class="text-sm text-cream/70">Sábado: 08:00 - 12:00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="openModal()" class="w-full bg-primary hover:bg-primaryDark text-white py-4 rounded-xl font-medium transition-all shadow-md flex items-center justify-center gap-2 text-base">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Agendar pelo WhatsApp</span>
+                    </button>
+                </div>
+
+                <!-- Map Box / Directions preview -->
+                <div class="lg:col-span-7 bg-white rounded-3xl shadow-lg border border-sand overflow-hidden flex flex-col justify-center relative min-h-[350px] p-6 md:p-8">
+                    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#b89768_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                    
+                    <div class="relative z-10 text-center space-y-6 max-w-lg mx-auto">
+                        <div class="w-16 h-16 bg-sand text-primary rounded-full flex items-center justify-center mx-auto text-2xl shadow-inner">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold font-serif text-secondary">Localização Central em Sertânia</h3>
+                        <p class="text-secondary/70 text-sm leading-relaxed">
+                            Estamos localizados na <strong class="text-secondary">Rua Dr. Manoel Borba</strong>, de fácil acesso para todos os bairros e cidades vizinhas. Venha nos fazer uma visita!
+                        </p>
+                        <a href="https://maps.google.com/?q=Rua+Dr.+Manoel+Borba+Sertania+PE" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-secondary text-cream px-6 py-3 rounded-full text-sm font-medium hover:bg-primary transition-colors shadow">
+                            <i class="fa-solid fa-compass"></i>
+                            <span>Abrir no Google Maps</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-cream/80 py-16 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                
+                <div class="space-y-4 md:col-span-2">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-white">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 2C8 2 5 5 5 9c0 3 2 5 2 7v3h10v-3s2-4 2-7c0-4-3-7-7-7z" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 6v10M9 9h6M10 13h4" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <span class="font-serif text-xl font-bold text-cream tracking-tight">SERTÃO SORRIR</span>
+                    </div>
+                    <p class="text-xs md:text-sm text-cream/70 max-w-sm leading-relaxed">
+                        Ortodontia, implantes, próteses e harmonização facial com excelência e carinho para renovar a sua autoestima em Sertânia-PE.
+                    </p>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="font-serif text-lg font-bold text-primary">Links Rápidos</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#inicio" class="hover:text-primary transition-colors">Início</a></li>
+                        <li><a href="#servicos" class="hover:text-primary transition-colors">Nossos Serviços</a></li>
+                        <li><a href="#sobre" class="hover:text-primary transition-colors">A Clínica</a></li>
+                        <li><a href="#localizacao" class="hover:text-primary transition-colors">Localização</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="font-serif text-lg font-bold text-primary">Contato</h4>
+                    <p class="text-sm text-cream/80"><i class="fa-solid fa-location-dot mr-2 text-primary"></i> Rua Dr. Manoel Borba, Sertânia-PE</p>
+                    <p class="text-sm text-cream/80"><i class="fa-brands fa-whatsapp mr-2 text-primary"></i> (87) 99999-9999</p>
+                    <div class="flex space-x-3 pt-2">
+                        <a href="#" class="w-9 h-9 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center text-cream transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center text-cream transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center text-cream transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-white/10 text-center text-xs text-cream/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p>&copy; 2026 Sertão Sorrir Odontologia. Todos os direitos reservados.</p>
+                <p>Desenvolvido com carinho para Sertânia - PE</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal / WhatsApp Redirect Modal -->
+    <div id="booking-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden p-4">
+        <div class="bg-cream rounded-3xl max-w-md w-full p-6 md:p-8 shadow-2xl relative border border-sand animate-in fade-in zoom-in duration-200">
+            <button onclick="closeModal()" class="absolute top-5 right-5 text-secondary/60 hover:text-secondary text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div class="text-center space-y-3 mb-6">
+                <div class="w-14 h-14 bg-primary/20 text-primary rounded-full flex items-center justify-center mx-auto text-2xl">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <h3 class="text-2xl font-bold font-serif text-secondary">Agendar Consulta</h3>
+                <p class="text-xs text-secondary/70">Preencha abaixo para iniciar seu atendimento via WhatsApp com nossa recepcionista.</p>
+            </div>
+
+            <form id="whatsapp-form" onsubmit="sendToWhatsApp(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-secondary mb-1">Seu Nome Completo</label>
+                    <input type="text" id="client-name" required placeholder="Ex: Maria Silva" class="w-full bg-white border border-sand rounded-xl px-4 py-3 text-sm text-secondary focus:outline-none focus:border-primary">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-secondary mb-1">Serviço de Interesse</label>
+                    <select id="client-service" class="w-full bg-white border border-sand rounded-xl px-4 py-3 text-sm text-secondary focus:outline-none focus:border-primary">
+                        <option value="Avaliação Geral">Avaliação Geral</option>
+                        <option value="Implantes Dentários">Implantes Dentários</option>
+                        <option value="Próteses Dentárias">Próteses Dentárias</option>
+                        <option value="Harmonização Facial">Harmonização Facial</option>
+                        <option value="Ortodontia">Ortodontia</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-secondary mb-1">Melhor Dia / Horário (Opcional)</label>
+                    <input type="text" id="client-time" placeholder="Ex: Segunda à tarde" class="w-full bg-white border border-sand rounded-xl px-4 py-3 text-sm text-secondary focus:outline-none focus:border-primary">
+                </div>
+
+                <button type="submit" class="w-full bg-primary hover:bg-primaryDark text-white py-3.5 rounded-xl font-medium transition-all shadow-md flex items-center justify-center gap-2 mt-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Continuar para o WhatsApp</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript for Mobile Menu & Modal -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Modal Controls
+        function openModal() {
+            document.getElementById('booking-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('booking-modal').classList.add('hidden');
+        }
+
+        function openServiceModal(serviceName) {
+            const selectEl = document.getElementById('client-service');
+            for(let i=0; i<selectEl.options.length; i++) {
+                if(selectEl.options[i].value === serviceName) {
+                    selectEl.selectedIndex = i;
+                    break;
+                }
+            }
+            openModal();
+        }
+
+        // WhatsApp Form Redirect
+        function sendToWhatsApp(e) {
+            e.preventDefault();
+            const name = document.getElementById('client-name').value.trim();
+            const service = document.getElementById('client-service').value;
+            const time = document.getElementById('client-time').value.trim();
+
+            const phoneNumber = "5587999999999"; // Replace with actual clinic WhatsApp if available
+            let message = `Olá! Meu nome é *${name}*. Gostaria de agendar uma consulta para *${service}*.`;
+            if(time) {
+                message += ` Preferência de horário: ${time}.`;
+            }
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+            window.open(whatsappUrl, '_blank');
+            closeModal();
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('booking-modal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
